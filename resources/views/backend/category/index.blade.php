@@ -25,7 +25,7 @@
                                 <td><img src="{{ asset( $item->photo ) }}" width="50px" alt=""></td>
                                 <td>
                                     <a href="/category/{{ $item->id }}/edit" class="badge badge-info" >Edit</a>
-                                    <a href="/category/{{ $item->id }}/edit" class="badge badge-success" >Show</a>
+                                    <a href="/category/{{ $item->id }}" class="badge badge-success" >Show</a>
                                 </td>
                                 
 

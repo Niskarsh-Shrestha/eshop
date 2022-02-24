@@ -18,6 +18,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/dist/css/adminlte.min.css">
   <!-- Datatable css -->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -129,7 +131,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <span class="dropdown-header">15 Notifications</span>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <i class="fas fa-envelope mr-2"></i> 100 new messages
             <span class="float-right text-muted text-sm">3 mins</span>
           </a>
           <div class="dropdown-divider"></div>
@@ -292,9 +294,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- jQuery -->
 <script src="/plugins/jquery/jquery.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js" ></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js" ></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js" ></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js" ></script>
 <script>
   $(document).ready( function () {
-    $('#datatable').DataTable();
+    $('#datatable').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
 } );
 </script>
 <!-- Bootstrap 4 -->

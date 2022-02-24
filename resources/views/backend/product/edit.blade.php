@@ -30,8 +30,8 @@
                             <div class="form-group">
                                 <label for="stock">Stock</label>
                                 <select id="stock" class="form-control" name="stock">
-                                    <option value="1">Available</option>
-                                    <option value="0">Out of stock</option>
+                                    <option value="1" {{ $product->stock == '1' ? 'selected' : '' }} >Available</option>
+                                    <option value="0" {{ $product->stock == '0' ? 'selected' : '' }} >Out of stock</option>
                                 </select>
                             </div>
 

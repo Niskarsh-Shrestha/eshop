@@ -8,23 +8,28 @@
                         <a href="/product/create" class="btn btn-primary" >Add Product</a>
                     </div>
                     <div class="card-body">
-                        <table class="table" >
+                        <table class="table" id="datatable">
+                         <thead>
                             <tr>
                                 <th>SN</th>
                                 <th>Product Name</th>
                                 <th>Photo</th>
                                 <th>stock</th>
+                                <th>Under</th>
                                 <th>Price</th>
                                 <th>Discount(%)</th>
                                 <th>Selling Price</th>
                                 <th>Action</th>
                             </tr>
-                            @foreach ($product as $item)
+                         </thead>
+                            <tbody>
+                                @foreach ($product as $item)
                                 <tr>
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td><img src="{{ asset($item->photo) }}" width="120px" alt=""></td>
                                     <td class="{{ $item->stock == 0 ? 'text-danger text-bold' : '' }} {{ $item->stock == 1 ? 'text-primary text-bold' : '' }}" >{{ $item->stock == 1 ? 'Available' : 'Out of stock'}}</td>
+                                    <td>{{ $item->category->name }}</td>
                                     <td>{{ $item->price }}</td>
                                     <td>{{ $item->discount_price }}</td>
                                     <td>{{ $item->selling_price }}</td>
@@ -33,6 +38,7 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>
